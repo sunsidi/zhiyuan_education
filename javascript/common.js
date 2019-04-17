@@ -75,7 +75,7 @@ $(document).ready(function() {
 			$('#column-left').removeClass('active');
 
 			$('#menu > li > ul').removeClass('in collapse');
-			$('#menu > li > ul').removeAttr('style');
+			$('#menu > li > ul').removeAttr('style-v1.css');
 		} else {
 			localStorage.setItem('column-left', 'active');
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
 			disableDragAndDrop: true,
 			height: 300,
 			toolbar: [
-				['style', ['style']],
+				['style-v1.css', ['style-v1.css']],
 				['font', ['bold', 'underline', 'clear']],
 				['fontname', ['fontname']],
 				['color', ['color']],

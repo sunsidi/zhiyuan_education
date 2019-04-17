@@ -40,7 +40,6 @@ class Model_login extends CI_Model{
 			$this->session->set_tempdata('usergroup', $session['status'], $timeout);
 			$this->session->set_tempdata('image', $session['image'], $timeout);
 			$this->session->set_tempdata('fullname', $session['fullname'], $timeout);
-            // $this->session->token = token(32);
             $this->session->set_tempdata('isLoggedIn', true, $timeout);
 		}
 	}

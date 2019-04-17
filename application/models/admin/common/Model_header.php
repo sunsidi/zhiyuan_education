@@ -48,7 +48,7 @@ class Model_header extends CI_Model
         return $header;
     }
 
-    public function loadHeader($title = 'Zhiyuan Education', $data = array())
+    public function loadHeader($title = '', $data = array())
     {
         // set header
         $header = $this->getHeader($title, $data);

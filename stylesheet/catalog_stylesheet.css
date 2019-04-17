@@ -1,0 +1,88 @@
+#header, #navbar {
+  margin-bottom: 0;
+}
+
+#header {
+  background-color: rgba(0, 0, 0, .075);;
+}
+
+@media (min-width: 768px) {
+  .home-bg {
+    background: url('../image/catalog/palace_meitu_1.jpg') no-repeat;
+    background-size: 100% auto;
+    height: 715px;
+    padding-top: 10%;
+  }
+  .footer-text-right{
+    text-align: right;
+  }
+  .footer-text-left{
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-bg {
+    background: url('../image/catalog/palace_meitu_1.jpg') no-repeat 60% 0;
+    height: 600px;
+    padding-top: 30%;
+  }
+  .footer-text-right{
+    text-align: center;
+  }
+  .footer-text-left{
+    text-align: center;
+  }
+}
+
+.home-bg > .container {
+  color: white;
+}
+
+.navbar-nav > li > a {
+  color: #777;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+footer > .container {
+  padding: 18px 0 22px 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-image: url(../image/catalog/blue-circles.svg);
+  background-size: 1500px;
+}
+footer {
+  background: #252525;
+  position: relative;
+}
+
+footer, footer a{
+  color: white;
+  font-size: 14px;
+}
+
+footer a {
+  margin-right: 12px;
+}
+
+.partners ul{
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+}
+
+.partners li{
+  display: inline-block;
+}
+
+.partners {
+  background: url('../image/catalog/gray-circles.svg');
+  padding-bottom: 3.2rem;
+}

@@ -7,6 +7,7 @@ class Login extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->model('admin/common/model_header');
 		$this->load->model('admin/common/model_footer');
+		$this->lang->load('admin/common/login_lang');
 	}
 	
 	public function index($msg = null)
@@ -22,13 +23,25 @@ class Login extends CI_Controller{
 			$data['forgotten'] = 'index.php/admin/common/forgotten';
 			$data['redirect'] = 'index.php/admin/common/Submit';
 
-			$this->lang->load('admin/common/login_lang');
+			
 			$data['entry_username'] = $this->lang->line('entry_username');
 			$data['entry_password'] = $this->lang->line('entry_password');
+			
 			$data['text_login'] = $this->lang->line('text_login');
 			$data['text_forgotten'] = $this->lang->line('text_forgotten');
+			
 			$data['button_login'] = $this->lang->line('button_login');
+			
 			$data['error_warning'] = $msg['error_warning'];
+
+			if ($this->input->get('success') == 1) {
+				$data['success'] = $this->lang->line('success_forgotten');
+			} else if ($this->input->get('success') == 2) {
+				$data['success'] = $this->lang->line('success_email_fail');
+			} else {
+				$data['success'] = null;
+			}
+
 			$this->load->view('admin/common/login', $data);
 
 			// set footer

@@ -1,7 +1,7 @@
 <?php
 class Model_column_left extends CI_Model{
 	public function __construct(){
-		$this->load->model('admin/setting/model_user');
+		$this->load->model('admin/rbac/model_user');
 		$this->load->library('session');
 		$this->lang->load('admin/common/column_left_lang');
 	}
@@ -15,31 +15,33 @@ class Model_column_left extends CI_Model{
             $sidebar['user_group'] = 'Muggle';
         }
 
-		// root selections
+		// root menus
 		$sidebar['home'] = 'index.php/admin/common/dashboard';
 		$sidebar['text_dashboard'] = $this->lang->line('text_dashboard');
-		$sidebar['text_recruitment'] = $this->lang->line('text_recruitment');
-		$sidebar['text_content_management'] = $this->lang->line('text_content_management');
-		$sidebar['text_applications'] = $this->lang->line('text_applications');
-		$sidebar['text_message'] = $this->lang->line('text_message');
-		$sidebar['text_print'] = $this->lang->line('text_print');
-		$sidebar['text_setting'] = $this->lang->line('text_setting');
+		$sidebar['text_stats'] = $this->lang->line('text_stats');
+		$sidebar['text_company'] = $this->lang->line('text_company');
+        $sidebar['text_server'] = $this->lang->line('text_server');
+        $sidebar['text_rbac'] = $this->lang->line('text_rbac');
+        $sidebar['text_log'] = $this->lang->line('text_log');
 
-		// sub selections
-		$sidebar['text_add_school'] = $this->lang->line('text_add_school');
-		$sidebar['text_add_job'] = $this->lang->line('text_add_job');
-		$sidebar['text_job_list'] = $this->lang->line('text_job_list');
-		$sidebar['text_website'] = $this->lang->line('text_website');
-		$sidebar['text_user'] = $this->lang->line('text_user');
-		$sidebar['text_faq'] = $this->lang->line('text_faq');
-        $sidebar['text_slideshow'] = $this->lang->line('text_slideshow');
+		// stats
+        $sidebar['text_company_stats'] = $this->lang->line('text_company_stats');
+        $sidebar['text_exchange_stats'] = $this->lang->line('text_exchange_stats');
 
-		$sidebar['add_job'] = 'index.php/admin/recruitment/recruitment';
-		$sidebar['add_school'] = 'index.php/admin/recruitment/school';
-		$sidebar['setting_edit'] = 'index.php/admin/setting/setting';
-		$sidebar['user_edit'] = 'index.php/admin/setting/user';
-        $sidebar['faq'] = 'index.php/admin/cms/faq';
-        $sidebar['slideshow'] = 'index.php/admin/cms/slideshow';
+        // rbac
+        $sidebar['text_user'] = $this->lang->line('text_user');
+        $sidebar['text_role'] = $this->lang->line('text_role');
+		
+		// stats link
+		$sidebar['company_stats'] = 'index.php/admin/stats/company';
+		$sidebar['exchange_stats'] = 'index.php/admin/stats/exchange';
+
+		// rbac link
+        $sidebar['user'] = 'index.php/admin/rbac/user';
+        $sidebar['role'] = 'index.php/admin/rbac/role';
+
+		// log link
+        $sidebar['log'] = 'index.php/admin/log/log';
 
 		$this->load->view('admin/common/column_left', $sidebar);
 	}

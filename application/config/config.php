@@ -23,8 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/zhiyuan/';
-$config['admin_url'] = 'http://localhost/zhiyuan/index.php/admin/common/login';
+$config['base_url'] = 'http://localhost/dianka/';
+$config['admin_url'] = 'http://localhost/dianka/index.php/admin/common/login';
+$config['catalog_url'] = 'http://localhost/dianka/index.php/catalog/common/home';
+$config['vendor_url'] = 'http://localhost/dianka/index.php/vendor/common/login';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -76,7 +78,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'chinese';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +226,20 @@ $config['log_threshold'] = 2;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = '/Applications/XAMPP/xamppfiles/htdocs/dianka/application/logs/';
+$config['log_name'] = 'access.log';
+
+/*
+|--------------------------------------------------------------------------
+| Basic path setting
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| application/logs/ directory. Use a full server path with trailing slash.
+|
+*/
+$config['admin_path'] = '/Applications/XAMPP/xamppfiles/htdocs/dianka/application/controllers/admin/';
+$config['catalog_path'] = '/Applications/XAMPP/xamppfiles/htdocs/dianka/application/controllers/catalog/';
 
 /*
 |--------------------------------------------------------------------------
@@ -511,3 +526,33 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Customer Config -- Wxpay Configuration
+|--------------------------------------------------------------------------
+|
+| Set the path of certification files
+| 证书路径,注意应该填写绝对路径（仅退款、撤销订单时需要，可登录商户平台下载，
+| API证书下载地址：https://pay.weixin.qq.com/index.php/account/api_cert，下载之前需要安装商户操作证书）
+|
+| Set report level
+| 接口调用上报等级，默认紧错误上报（注意：上报超时间为【1s】，上报无论成败【永不抛出异常】，
+| 不会影响接口调用流程），开启上报之后，方便微信监控请求调用的质量，建议至少
+| 开启错误上报。
+| 上报等级，0.关闭上报; 1.仅错误出错上报; 2.全量上报
+|
+| Other settings, such as 'APPID, MCHID, KEY & APPSECRET', should be grabbed from the database
+*/
+$config['SSLCERT_PATH'] = '../cert/apiclient_cert.pem';
+$config['SSLKEY_PATH'] = '../cert/apiclient_key.pem';
+$config['REPORT_LEVENL'] = 1;
+
+/*
+|--------------------------------------------------------------------------
+| Customer Config -- Version
+|--------------------------------------------------------------------------
+|
+| This is used to set the version of the program
+*/
+$config['version'] = '1.0.0';

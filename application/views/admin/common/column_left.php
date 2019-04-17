@@ -13,35 +13,31 @@
         </div>
     </div>
     <ul id="menu">
-        <li id="dashboard"><a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i>
-                <span><?php echo $text_dashboard; ?></span></a></li>
-        <li id="recruitment"><a class="parent"><i class="fa fa-linkedin fa-fw"></i>
-                <span><?php echo $text_recruitment; ?></span></a>
+        <li id="dashboard">
+            <a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i><span><?php echo $text_dashboard; ?></span></a>
+        </li>
+        <li id="stats">
+            <a class="parent"><i class="fa fa-bar-chart fa-fw"></i><span><?php echo $text_stats; ?></span></a>
             <ul>
-                <li><a href="<?php echo $add_job; ?>"><?php echo $text_add_job; ?></a></li>
-                <li><a href="<?php echo $add_school; ?>"><?php echo $text_add_school; ?></a></li>
+                <li><a href="<?php echo $company_stats; ?>"><?php echo $text_company_stats; ?></a></li>
+                <li><a href="<?php echo $exchange_stats; ?>"><?php echo $text_exchange_stats; ?></a></li>
             </ul>
         </li>
-        <li id="content">
-            <a class="parent"><i class="fa fa-newspaper-o fa-fw"></i><span><?php echo $text_content_management; ?></span></a>
+        <li id="company">
+            <a class="parent"><i class="fa fa-university fa-fw"></i><span><?php echo $text_company; ?></span></a>
+        </li>
+        <li id="server">
+            <a class="parent"><i class="fa fa-server fa-fw"></i><span><?php echo $text_server; ?></span></a>
+        </li>
+        <li id="rbac">
+            <a class="parent"><i class="fa fa-users fa-fw"></i><span><?php echo $text_rbac; ?></span></a>
             <ul>
-                <li><a href="<?php echo $slideshow; ?>"><?php echo $text_slideshow; ?></a></li>
-                <li><a href="<?php echo $faq; ?>"><?php echo $text_faq; ?></a></li>
+                <li><a href="<?php echo $user; ?>"><?php echo $text_user; ?></a></li>
+                <li><a href="<?php echo $role; ?>"><?php echo $text_role; ?></a></li>
             </ul>
         </li>
-        <li id="applications">
-            <a class="parent"><i class="fa fa-file-text-o fa-fw"></i><span><?php echo $text_applications; ?></span></a>
-        </li>
-        <li id="message"><a class="parent"><i class="fa fa-envelope-o"></i>
-                <span><?php echo $text_message; ?></span></a>
-        </li>
-        <li id="print"><a class="parent"><i class="fa fa-print fa-fw"></i> <span><?php echo $text_print; ?></span></a>
-        </li>
-        <li id="user"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_setting; ?></span></a>
-            <ul>
-                <li><a href="<?php echo $setting_edit; ?>"><?php echo $text_website; ?></a></li>
-                <li><a href="<?php echo $user_edit; ?>"><?php echo $text_user; ?></a></li>
-            </ul>
+        <li id="log">
+            <a href="<?php echo $log; ?>"><i class="fa fa-save fa-fw"></i><span><?php echo $text_log; ?></span></a>
         </li>
     </ul>
 </nav>
