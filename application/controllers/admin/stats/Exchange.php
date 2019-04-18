@@ -31,7 +31,7 @@ class Exchange extends CI_Controller
         // set sidebar
         $this->model_column_left->loadSidebar();
 
-        $data = $this->_getList('exchange');
+        $data = $this->_getList();
 
         $this->load->view('admin/stats/exchange', $data);
         // set footer

@@ -54,7 +54,7 @@
                                data-date-format="YYYY-MM-DD" id="input-trade-date" class="form-control">
                     </div>
                     <label for="input-trade-date" class="control-label">交易日期</label>
-                    <div class="input-group" style="border-radius: 3px; display: inline-flex;">
+                    <div class="input-group date" style="border-radius: 3px; display: inline-flex;">
                         <input type="text" name="filter_date_start" value="" placeholder="交易日期"
                                data-date-format="YYYY-MM-DD" id="input-trade-date" class="form-control" style="width: auto;">
                         <span class="input-group-btn">
@@ -63,13 +63,17 @@
                     </div>
                     <label for="input-trade-date" class="control-label">证监局</label>
                     <div class="" style="border-radius: 3px; display: inline-flex;">
-                        <input type="text" name="filter_date_start" value="" placeholder="证监局"
+                        <select type="text" name="filter_date_start" value="" placeholder="证监局"
                                data-date-format="YYYY-MM-DD" id="input-trade-date" class="form-control">
+                            <option value="">上海证监局</option>
+                        </select>
                     </div>
                     <label for="input-trade-date" class="control-label">交易所</label>
                     <div class="" style="border-radius: 3px; display: inline-flex;">
-                        <input type="text" name="filter_date_start" value="" placeholder="交易所"
+                        <select type="text" name="filter_date_start" value="" placeholder="交易所"
                                data-date-format="YYYY-MM-DD" id="input-trade-date" class="form-control">
+                            <option value="">大连商品交易所</option>
+                        </select>
                     </div>
                     <div class="pull-right">
                         <button type="submit" form="form-setting" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="查询"><i class="fa fa-search"></i>
@@ -118,16 +122,17 @@
                             <tbody>
                             <?php if (isset($list)) { ?>
                                 <?php foreach ($list as $row) { ?>
-                                    <tr class="<?php echo $row['code']?>">
-                                        <td class="text-center"><?php if (in_array($row['id'], $selected)) { ?>
-                                                <input type="checkbox" name="selected[]" value="<?php echo $row['id']; ?>" checked="checked" />
-                                            <?php } else { ?>
-                                                <input type="checkbox" name="selected[]" value="<?php echo $row['id']; ?>" />
-                                            <?php } ?>
-                                        </td>
-                                        <td class="text-left"><?php echo $row['title']; ?></td>
-                                        <td class="text-left"><?php echo $row['status']; ?></td>
-                                        <td class="text-right"><a href="<?php echo $row['edit']; ?>" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Edit"><i class="fa fa-pencil"></i></a></td>
+                                    <tr>
+                                        <td class="text-center"><?php echo $row['trade']; ?></td>
+                                        <td class="text-center"><?php echo $row['name']; ?></td>
+                                        <td class="text-center"><?php echo $row['upload_time']; ?></td>
+                                        <td class="text-center"><?php echo $row['decrypted_time']; ?></td>
+                                        <td class="text-center"><?php echo $row['upload_status']; ?></td>
+                                        <td class="text-center"><?php echo $row['filename']; ?></td>
+                                        <td class="text-center"><?php echo $row['size']; ?></td>
+                                        <td class="text-center"><?php echo $row['upload_number']; ?></td>
+                                        <td class="text-center"><?php echo $row['status']; ?></td>
+                                        <td class="text-center"><?php echo $row['error']; ?></td>
                                     </tr>
                                 <?php } ?>
                             <?php } else { ?>
@@ -143,3 +148,9 @@
         </div>
     </div>
 </div>
+<script>
+    $('.date').datetimepicker({
+        language: 'zh-cn',
+        pickTime: false
+    });
+</script>
